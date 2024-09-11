@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔️</text></svg>">
+
+  <link rel="canonical" href="https://www.avibagla.com/netelevation" />
+  <meta name="description" content="Find the net elevation of famous dead people!" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Net Elevation" />
+  <meta property="og:url" content="https://www.avibagla.com/netelevation" />
+  <meta property="og:description" content="Find the net elevation of famous dead people!" />
+  <meta property="og:image" content="https://www.avibagla.com/netelevation/images/share.png" />
+  <title></title>
+
+
+  <!-- import the webpage's stylesheet -->
+  <!-- <link rel="stylesheet" href="https://use.typekit.net/dbv3zpb.css"> -->
+  <link rel="stylesheet" href="./style.css">
+
+
+  <!-- import the webpage's javascript file -->
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <h1>Net Elevation</h1>
+  <h4 id="top-subtitle">Find the net elevation of dead people</h4>
+  <div id="description">
+    <p>When someone is born, they have an elevation at their birthplace. When that same someone dies, they have an elevation at that death place. No matter where they may have gone in their life, they have one net elevation from birth to death. Now, you can know.</p>
+  </div>
+
+  <div class="submission-section">
+    <h3>Who are you looking for?</h3>
+    <input type="text" name="name" id="name-input" placeholder="famous deceased person" aria-placeholder="input a famous deceased person" aria-label="name"><button aria-label="submit button" id="submission-button">Find Elevation</button></div>
+
+    <div class="results">
+      <h3 class="result-name"></h3>
+      <div class="base stats">
+        <div class="birth">
+          <div class="birth-place"></div>
+          <div class="birthday"></div>
+          <div class="birth-elevation"></div>
+        </div>
+        <div class="death">
+          <div class="death-place"></div>
+          <div class="deathday"></div>
+          <div class="death-elevation"></div>
+        </div>
+      </div>
+      <div class="calculated stats">
+        <div class="net-elevation"></div>
+        <div class="distance"></div>
+        <div class="slope"></div>
+      </div>
+      <div id="map"></div>
+      <div class="comparisons">
+        <div class="taller-than"></div>
+        <div class="longer-than"></div>
+        <div class="time-to-walk"></div>
+      </div>
+    </div>
+  
+</body>
+</html>
+
+
+<!-- things I want to add
+- map of the elevation with a line drawn from start to end with an arrow (probably polygon?) and markers with the right font that say birthplace and elevation and death place and elevation
+- net elevation comparison to "that's taller than" and have like 30 options with 30 images
+- database for server calls on the cloudfare side so i'm not constantly hitting end points
+- box of 9 possible people to search for under the text box.  
+
+-->
