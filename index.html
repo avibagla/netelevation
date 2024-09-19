@@ -15,18 +15,22 @@
   <meta property="og:url" content="https://www.avibagla.com/netelevation" />
   <meta property="og:description" content="Find the net elevation of famous dead people!" />
   <meta property="og:image" content="https://www.avibagla.com/netelevation/images/share.png" />
+  <link rel="stylesheet" href="https://use.typekit.net/vlb6wjj.css">
 
 
 
   <!-- Compressed JS and CSS -->
-  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css "integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous"> -->
   <link rel=icon href="/public/icon.svg" />
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-  <!-- 
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+  <!-- LEAFLET -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <title>Net Elevation</title>
 
@@ -41,7 +45,7 @@
 </head>
 
 <body>
-  <h1>Net Elevation</h1>
+  <h1>NET ELEVATION</h1>
   <h4 id="top-subtitle">Find the net elevation of dead people</h4>
   <div id="description">
     <p>When someone is born, they have an elevation at their birthplace. When that same someone dies, they have an
@@ -51,26 +55,96 @@
 
   <div class="submission-section">
     <h3>Who are you looking for?</h3>
-    <input type="text" name="name" id="name-input" placeholder="famous deceased person"
-      aria-placeholder="input a famous deceased person" aria-label="name">
-    <button href="#" id="submit-button" class="button expanded" aria-label="submit button">Find Elevation</button>
+    <div class="input-section">
+      <input type="text" name="name" id="name-input" placeholder="famous deceased person"
+        aria-placeholder="input a famous deceased person" aria-label="name">
+      <button href="#" id="submit-button" class="button expanded" aria-label="submit button">Find Elevation</button>
+    </div>
   </div>
   <div class="submission-suggestions ">
-    <h5 class="suggestion-title">Need a suggestion?</h3>
-      <div class="suggestion-row">
-        <button class="suggestion" aria-label="submission suggestions">Abraham Lincoln</button>
-        <button class="suggestion" aria-label="submission suggestions">Amy Winehouse</button>
-          <button class="suggestion" aria-label="submission suggestions">Albert Einstein</button>
+    <h5 class="suggestion-title">Need a suggestion?</h5>
+    <div class="suggestion-row">
+      <button class="suggestion" aria-label="submission suggestions">Abraham Lincoln</button>
+      <button class="suggestion" aria-label="submission suggestions">Amy Winehouse</button>
+      <button class="suggestion" aria-label="submission suggestions">Albert Einstein</button>
 
+    </div>
+    <div class="suggestion-row">
+      <button class="suggestion" aria-label="submission suggestions">Marilyn Monroe</button>
+      <button class="suggestion" aria-label="submission suggestions">James Earl Jones</button>
+      <button class="suggestion" aria-label="submission suggestions">George Carlin</button>
+    </div>
+  </div>
+
+  <div id="results">
+    <div class="main-result">
+      <h3 class="elevation-main-result">
+        <span class="elevation-celeb-name">Amy Winehouse's</span> net elevation was
+        <span class="net-elevation-number">-42 meters</span> (-137.80 ft)
+      </h3>
+    </div>
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+
+    <div class="details">
+      <h2 class="result-name">Amy Winehouse</h2>
+      <div class="image-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Amy_Winehouse_f4962007_crop.jpg"
+          alt="Photo of Amy Winehouse">
       </div>
-      <div class="suggestion-row">
-        <button class="suggestion" aria-label="submission suggestions">Marilyn Monroe</button>
-        <button class="suggestion" aria-label="submission suggestions">James Earl Jones</button>
-          <button class="suggestion" aria-label="submission suggestions">Robin Williams</button>
+      <div class="stats-text">
+        <p>Amy Winehouse was born on <span class="special-info"><time datetime="1983-09-14">September 13th,
+              1983</time></span> in <span class="special-info">Southgate, London</span>, which has an elevation of <span
+            class="special-info">76 meters (249.34 feet).</span></p>
+        <p class="right-align-paragraph">Amy Winehouse died on <span class="special-info"><time
+              datetime="2011-07-23">July 22nd, 2011</time></span> in
+          <span class="special-info">Camden Town</span>, which has an elevation of <span class="special-info">34 meters
+            (111.55 feet).</span>
+        </p>
+        <p>That means Amy Winehouse had a net elevation change of <span class="special-info">-42 meters (-137.80
+            ft)</span>, with a distance of <span class="special-info">10.08
+            km</span>, resulting in a slope of <span class="special-info">-0.42%.</span></p>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="details">
+      <h3 class="result-name">Amy Winehouse</h3>
+      <div class="image-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Amy_Winehouse_f4962007_crop.jpg"
+          alt="Photo of Amy Winehouse">
+      </div>
+      <div class="base stats">
+        <div class="birth">
+          <div class="birth-place">Southgate, London</div>
+          <div class="birthday">9/13/1983</div>
+          <div class="birth-elevation">76 meters</div>
+        </div>
+        <div class="death">
+          <div class="death-place">Camden Town</div>
+          <div class="deathday">7/22/2011</div>
+          <div class="death-elevation">34 meters</div>
+        </div>
       </div>
 
-      <div class="results">
-        <h3 class="result-name"></h3>
+      <div class="calculated stats">
+        <div class="net-elevation">Net Elevation Change: -42 meters</div>
+        <div class="distance">Distance: 10.08 km</div>
+        <div class="slope">Slope: -0.42%</div>
+      </div>
+    </div> -->
+
+  </div>
+
+  <!-- <div id="results">
+     <div class="main-result">
+          <h3 class="elevation-main-result"><span>NAME's</span> net elevation was <span class="net-elevation-number">X
+              meters</span></h3>
+        </div>
+        <h3 class="result-name">NAME</h3>
+        <div class="image-container">
+          <img src="WIKI IMAGE URL" alt="Photo of NAME">
+        </div>
         <div class="base stats">
           <div class="birth">
             <div class="birth-place"></div>
@@ -82,25 +156,18 @@
             <div class="deathday"></div>
             <div class="death-elevation"></div>
           </div>
-        </div>
-        <div class="calculated stats">
-          <div class="net-elevation"></div>
-          <div class="distance"></div>
-          <div class="slope"></div>
-        </div>
-      </div>
-
-      <div class="map-container">
-        <div id="map"></div>
-      </div>
+  </div> -->
+  </div>
 
 
 
-      <div class="comparisons">
-        <div class="taller-than"></div>
-        <div class="longer-than"></div>
-        <div class="time-to-walk"></div>
-      </div>
+
+
+  <div class="comparisons">
+    <div class="taller-than"></div>
+    <div class="longer-than"></div>
+    <div class="time-to-walk"></div>
+  </div>
 
 </body>
 

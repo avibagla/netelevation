@@ -1,0 +1,271 @@
+:root {
+  --dark-green: #053225ff;
+  --true-blue: #3066beff;
+  --bright-pink: #f45b69;
+  --ghost-white: #fffaffff;
+  --oxford-blue: #04052E;
+  --title-font-family: "arbotek", sans-serif;
+  --body-font-family: "orbital", Arial, Helvetica, sans-serif;
+}
+
+
+
+body {
+
+  background-color: var(--dark-green);
+  color: var(--ghost-white);
+  font-family: "orbital", Arial, Helvetica, sans-serif;
+  max-width: 800px;
+  margin: auto !important;
+  padding: 16px;
+
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  text-align: center;
+}
+
+h1 {
+  font-family: "bigcity-grotesque-pro", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--true-blue);
+  font-size: 3.5em;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+h5 {
+  font-style: italic;
+  opacity: 80%;
+  font-size: 1em;
+  color: var(--true-blue)
+}
+
+/* button {
+  background-color: var(--oxford-blue);
+  color: black;
+  
+
+} */
+
+.submission-suggestions {
+  max-width: 500px;
+  margin: auto;
+  background-color: var(--ghost-white);
+  padding: 16px;
+  margin-top: 16px;
+  ;
+  border-radius: 4px;
+}
+
+.suggestion-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 8px;
+  ;
+
+}
+
+/* Base button styles */
+button {
+  background-color: var(--oxford-blue);
+  color: var(--ghost-white);
+  font-family: var(--body-font-family);
+  /* Retro vibe */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 2px;
+  border-right: 8px;
+  /* Rounded corners */
+  cursor: pointer;
+  transition: all 0.1s ease;
+  position: relative;
+  /* border: var(--ghost-white);
+    border-bottom: 4px solid;
+    border-right: 4px solid; */
+  /* Required for pseudo-elements */
+}
+
+
+button:hover::after,
+button:focus::after {
+  width: 100%;
+  height: 100%;
+}
+
+button:hover,
+button:focus {
+  outline: none;
+  color: var(--dark-green);
+  /* Optional text color change */
+  background-color: var(--ghost-white);
+  /* Optional background change */
+}
+
+/* Active state for when the button is clicked */
+button:active {
+  background-color: var(--true-blue);
+  color: var(--ghost-white);
+}
+
+
+
+.suggestion {
+  /*Suggestion buttons specifically*/
+  flex: 1;
+  /* Expand buttons to take equal space */
+  margin: 0;
+  /* Ensure no extra margins are added */
+  padding: 16px 24px;
+  background-color: var(--oxford-blue);
+  border: none;
+  /* Rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+img {
+  width: 200px;
+}
+
+#name-input {
+  width: 100%;
+  padding: 16px;
+  font-family: var(--body-font-family);
+  margin-right: 8px;
+}
+
+.submission-button {
+  padding: 0px;
+}
+
+.submission-section {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 32px;
+}
+
+.submission-section .input-section {
+  display: flex;
+  height: 50px;
+}
+
+
+/*Main Elevation answer section*/
+
+.main-result {
+  background-color: var(--oxford-blue);
+  margin: 16px;
+  border-radius: 4px;
+  padding: 16px;
+  transition: opacity 1s ease-in-out;
+  /* Transition for fading in */
+
+}
+
+.elevation-main-result {
+  color: var(--true-blue);
+  font-style: italic;
+  font-size: 3em;
+
+}
+
+.elevation-celeb-name {
+  font-weight: 900;
+  color: var(--ghost-white);
+  font-style: normal;
+}
+
+.net-elevation-number {
+  color: var(--ghost-white);
+  border-bottom: 10px black;
+  font-style: normal;
+}
+
+/*
+
+
+Here are the specific stats on the side
+
+
+*/
+
+.details {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  /* 3 columns: image (200px), birth/death stats (auto), calculated stats (auto) */
+  grid-template-rows: auto;
+  /* Let rows adjust based on content */
+  grid-gap: 16px;
+  /* Gap between columns and rows */
+  padding: 16px;
+  max-width: 800px;
+  margin: 16px auto;
+  /* Center the container */
+  background-color: var(--oxford-blue);
+  /* Optional background */
+  border-radius: 8px;
+  color: var(--ghost-white);
+  /* Text color */
+}
+
+.result-name {
+  grid-column: 1 / -1;
+  /* Span the name across all columns */
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 16px;
+}
+
+.image-container img {
+  width: 100%;
+  /* Ensure the image fits the container */
+  max-width: 200px;
+  /* Image stays at 200px width */
+  border-radius: 8px;
+  border: var(--ghost-white);
+  border-bottom: 4px solid;
+  border-right: 4px solid;
+  /* Rounded corners for the image */
+}
+
+.base.stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.stats-text{
+  grid-column: 2 / -1;
+  font-size: 1.2em;
+  padding-left: 16px;
+}
+
+.stats-text p {
+  padding-bottom: 16px;
+}
+
+.birth,
+.death {
+  margin-bottom: 8px;
+}
+
+
+.special-info{
+  color:var(--bright-pink)
+}
+
+.right-align-paragraph {
+  text-align: right;
+}
