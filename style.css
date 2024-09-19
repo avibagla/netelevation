@@ -35,10 +35,15 @@ h1 {
   font-weight: 900;
   font-style: italic;
   color: var(--true-blue);
-  font-size: 3.5em;
+  font-size: 4.5em;
+  border-bottom: #04052E;
   margin: 0px;
   padding: 0px;
   text-align: center;
+text-shadow: 4px 4px 0 var(--oxford-blue),
+    /* Right and Bottom shadow */
+    -0px -0px 0 #04052E;
+  /* Left and Top shadow to create depth */
 }
 
 h5 {
@@ -55,14 +60,27 @@ h5 {
 
 } */
 
+#top-subtitle{
+  font-style: italic;
+  opacity: .8;
+  margin-top: 0;
+  font-size: 1em;
+}
+
+
 .submission-suggestions {
   max-width: 500px;
   margin: auto;
   background-color: var(--ghost-white);
   padding: 16px;
   margin-top: 16px;
-  ;
   border-radius: 4px;
+  transition: height .5s ease-out, opacity .5s ease-out;
+  height: 200px;
+  /* Ensure the height is auto initially */
+  overflow: hidden;
+  /* Hide content that overflows */
+
 }
 
 .suggestion-row {
@@ -152,6 +170,7 @@ img {
 .submission-section {
   max-width: 500px;
   margin: auto;
+  margin-top: 32px;
   margin-bottom: 32px;
 }
 
@@ -160,6 +179,14 @@ img {
   height: 50px;
 }
 
+
+/* State when hiding */
+.slide-up {
+  height: 0;
+  /* Collapse the height */
+  opacity: 0;
+  /* Fade out */
+}
 
 /*Main Elevation answer section*/
 
@@ -209,7 +236,7 @@ Here are the specific stats on the side
   grid-gap: 16px;
   /* Gap between columns and rows */
   padding: 16px;
-  max-width: 800px;
+  max-width: 6000px;
   margin: 16px auto;
   /* Center the container */
   background-color: var(--oxford-blue);
@@ -246,7 +273,7 @@ Here are the specific stats on the side
   padding: 8px;
 }
 
-.stats-text{
+.stats-text {
   grid-column: 2 / -1;
   font-size: 1.2em;
   padding-left: 16px;
@@ -262,10 +289,24 @@ Here are the specific stats on the side
 }
 
 
-.special-info{
-  color:var(--bright-pink)
+.special-info {
+  color: var(--bright-pink)
 }
 
 .right-align-paragraph {
   text-align: right;
+}
+
+
+.map-container {
+  margin: 32px;
+}
+
+#key-map {
+  height: 400px;
+}
+
+.map-pre-load {
+  display: none;
+  ;
 }
