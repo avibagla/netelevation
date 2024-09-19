@@ -38,7 +38,7 @@ $(function () {
 
     var response = await fetch(encodeURI(INFO_API_URL + "?name=" + name));
     const elevationInfo = await response.json();
-    console.log(elevationInfo);
+    // console.log(elevationInfo);
 
     return elevationInfo;
 
@@ -49,7 +49,6 @@ $(function () {
   /**Let's create a bunch of little functions to handle each html section */
 
   function elevationHTML(elevationInfo) {
-    console.log(elevationInfo)
 
     const birthDateFormatted = formatDateWithSuffix(elevationInfo.birthDate);
     const deathDateFormatted = formatDateWithSuffix(elevationInfo.deathDate);
@@ -89,29 +88,37 @@ $(function () {
 
     console.log(err);
 
-    var myNote=
+    var myNote = "";
 
-    switch (err.details) {
-      case value:
-        
-        break;
-    
-      default:
-        break;
+    console.log(err);
+
+    $(".submission-suggestions").addClass("slide-up");
+    $(".submission-suggestions").on('transitionend', function () {
+      $(this).remove();
+    });
+    if (err.details === "There is no birthday associated with this wiki search") {
+      myNote = "Hey buddy, when we check wikipedia, this search has no birthday... did you look up an inanimate object? This starts to trigger some philsophical questions, that I, as a website, cannot help you with. Well, some websites can - just not this one."
+    } else if (err.details === "There is no deathday associated with this wiki search") {
+      myNote = "So it appears that this person is still alive. Can't really help you here, can't calculate their net elevation if it's still changing. I guess... I'm sorry they're not dead?"
+    } else if (err.details === "Cannot read properties of undefined (reading '0')"){
+      myNote = "Okay.... so you either 1) keyboard smashed, 2) mispelled the name you're looking for or 3) put a bunch of numbers in this for no reason. If it's a common mispelling, I'll get around to trying to fix it! Try searching again!";
+
+    } else {
+      myNote = "Okay, so I definitely messed up something on the backend. I'm sorry. I've reported this mistake to Santa Claus, my one true savior, and they (yes Santa uses they/them pronouns) will find the appropriate way to punish me until I fix said error."
     }
 
 
     var errorHTML = `
           <div class="error-message">
-            <h3>Oops! Look's like you ran into an error! </h3>
-            <p>Let's see if it's your fault, or mine.</p?>
-
-
-
-
+            <h3>AN ERROR HAS OCCURED</h3>
+            <h6>let's see what happened....</h6>
+            <p class="error-text">${myNote}</p>
+          
           </div>
       `
 
+
+    console.error(errorHTML);
     $("#results").html(errorHTML)
 
   }
@@ -126,7 +133,7 @@ $(function () {
       maxZoom: 19,
       attribution:
         '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-      
+
     }).addTo(map);
 
     var birthCoords = JSON.parse(info.birthCoords);
@@ -175,14 +182,16 @@ $(function () {
 
   /**This is where ALL the work happens */
   async function nameSubmission(e, name) {
-    if (!map) { map = L.map("key-map", {
-      center: [48.3984968, 9.9912458],
-      zoom: 6,
-      scrollWheelZoom: false, // Disable zooming with the scroll wheel
-      doubleClickZoom: false, // Disable zooming on double click
-      touchZoom: false, // Disable zooming with touch gestures
-      zoomControl: false // Optionally hide zoom control buttons
-    }).setView([40.687, -73.98], 13); }
+    if (!map) {
+      map = L.map("key-map", {
+        center: [48.3984968, 9.9912458],
+        zoom: 6,
+        scrollWheelZoom: false, // Disable zooming with the scroll wheel
+        doubleClickZoom: false, // Disable zooming on double click
+        touchZoom: false, // Disable zooming with touch gestures
+        zoomControl: false // Optionally hide zoom control buttons
+      }).setView([40.687, -73.98], 13);
+    }
 
     // if (e) { e.preventDefault(); }
 
@@ -194,6 +203,10 @@ $(function () {
     try {
       elevationInfo = await getPersonData(name);
       console.log(elevationInfo);
+      if(elevationInfo.error){
+        throw elevationInfo;
+      };
+      // console.log(elevationInfo);
       var resultsHTML = elevationHTML(elevationInfo);
       console.log(resultsHTML);
       $("#results").html(resultsHTML)
@@ -216,7 +229,6 @@ $(function () {
 
     } catch (error) {
 
-      console.log(error);
       handleError(error);
 
       nameInput.prop("disabled", false);
@@ -241,7 +253,7 @@ $(function () {
     }
   });
 
-  submitButton.click(function(){
+  submitButton.click(function () {
     nameSubmission(null, nameInput.val())
   });
 
