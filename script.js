@@ -107,6 +107,9 @@ $(function () {
     } else if (err.details === "Cannot read properties of undefined (reading '0')"){
       myNote = "Okay.... so you either 1) keyboard smashed, 2) mispelled the name you're looking for or 3) put a bunch of numbers in this for no reason. If it's a common mispelling, I'll get around to trying to fix it! Try searching again!";
 
+    } else if(err.details.includes("openstreetmap")){
+      myNote = "So, the place that this person died or was born in seems to not exist on Open Street Map. I'll see what I can do.";
+
     } else {
       myNote = "Okay, so I definitely messed up something on the backend. I'm sorry. I've reported this mistake to Santa Claus, my one true savior, and they (yes Santa uses they/them pronouns) will find the appropriate way to punish me until I fix said error."
     }
