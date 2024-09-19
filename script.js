@@ -66,6 +66,10 @@ $(function () {
       </div>
       <div class="map-container">
       <div id="key-map"></div>
+      <div class="emoji-credit">
+        <a target="_blank" href="https://icons8.com/icon/y5aqtLBZHmCy/headstone">Headstone</a> and <a target="_blank" href="https://icons8.com/icon/101036/baby-bottle">Baby Bottle</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+      
+      </div>
     </div>
       <div class="details">
       <h2 class="result-name">${elevationInfo.name}</h2>
@@ -126,7 +130,20 @@ $(function () {
 
   /*Map Information */
   var map;
+  
+  const birthIcon = L.icon({
+    iconUrl: './images/birthicon.png', // URL to your custom icon for birth
+    iconSize: [32, 32], // Size of the icon
+    iconAnchor: [16, 32], // Anchor point of the icon
+    popupAnchor: [0, -32] // Point from which the popup should open relative to the iconAnchor
+  });
 
+  const deathIcon = L.icon({
+    iconUrl: './images/deathicon.png', // URL to your custom icon for death
+    iconSize: [32, 32], // Size of the icon
+    iconAnchor: [16, 32], // Anchor point of the icon
+    popupAnchor: [0, -32] // Point from which the popup should open relative to the iconAnchor
+  });
 
   var addMapData = function (info) {
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -152,10 +169,9 @@ $(function () {
     ];
     console.log(latlngs)
 
-    var lineForDistance = L.polyline(latlngs, { color: "#000000", weight: 10, opacity: 0.3 }).addTo(map);
-    map.fitBounds(lineForDistance.getBounds());
+    var lineForDistance = L.polyline(latlngs, { color: "#000000", weight: 5, opacity: 0.8 }).addTo(map);
 
-    var birthMarker = L.marker([birthCoords.lat, birthCoords.lon])
+    var birthMarker = L.marker([birthCoords.lat, birthCoords.lon], {icon:birthIcon})
       .bindPopup(`
         
         <div class="popup-content popup-birth">
@@ -166,7 +182,7 @@ $(function () {
         
         `)
       .addTo(map);
-    var deathMarker = L.marker([deathCoords.lat, deathCoords.lon])
+    var deathMarker = L.marker([deathCoords.lat, deathCoords.lon], {icon:deathIcon})
       .bindPopup(`
         <div class="popup-content popup-death">
           <h4 class="popup-title">Deathplace</h4>
@@ -175,6 +191,9 @@ $(function () {
         </div>
         `)
       .addTo(map);
+
+    map.fitBounds(lineForDistance.getBounds());
+
 
 
 

@@ -353,3 +353,33 @@ ERRORS STUFF
 p.error-text{
   text-align: center;
 }
+
+.emoji-credit {
+  font-style: italic;
+  margin-top:4px;
+  /* padding-left: 4px; */
+  text-align: right;
+}
+
+a{
+  color:var(--bright-pink)
+}
+
+
+.popup-content{
+
+  font-family: var(--body-font-family);
+}
+
+.popup-content h4{
+  font-size: 1.3em;;
+  margin: 0px;
+}
+
+.popup-content p{
+  margin: 0px;
+}
+
+.leaflet-popup-tip{
+  border-radius: 10px;
+}
