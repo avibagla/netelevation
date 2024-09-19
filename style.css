@@ -154,7 +154,7 @@ button:active {
 }
 
 img {
-  width: 200px;
+  width: 100%;
 }
 
 #name-input {
@@ -383,4 +383,46 @@ a{
 
 .leaflet-popup-tip{
   border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+
+  /* minor adjustments on titles*/
+
+  h1{
+    font-size: 2.5em;
+  }
+
+  .elevation-main-result{
+    font-size: 1.5em;;
+  }
+
+
+
+  .details {
+    display: block;
+    grid-template-columns: 1fr;
+    /* Stack the grid items vertically */
+    /* Center the text */
+  }
+
+  .image-container {
+    text-align: center;
+    margin:auto;
+        margin-bottom: 16px;
+    max-width: 200px;;
+    /* Space between image and text */
+  }
+
+    .result-name {
+      grid-column: 1 ;
+      /* Span the name across all columns */
+      text-align: center;
+      font-size: 1.5em;
+      margin-bottom: 16px;
+    }
+
+    .right-align-paragraph{
+      text-align: right;
+    }
 }

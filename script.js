@@ -72,7 +72,9 @@ $(function () {
       </div>
     </div>
       <div class="details">
-      <h2 class="result-name">${elevationInfo.name}</h2>
+      <div class="result-name">
+        <h2>${elevationInfo.name}</h2>
+      </div>
       <div class="image-container">
         <img src="${elevationInfo.wikiImage}" alt="Photo of ${elevationInfo.name}">
       </div>
