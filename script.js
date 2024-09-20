@@ -73,15 +73,15 @@ $(function () {
     </div>
       <div class="details">
       <div class="result-name">
-        <h2>${elevationInfo.name}</h2>
+        <h2>${elevationInfo.title}</h2>
       </div>
       <div class="image-container">
-        <img src="${elevationInfo.wikiImage}" alt="Photo of ${elevationInfo.name}">
+        <img src="${elevationInfo.wikiImage}" alt="Photo of ${elevationInfo.title}">
       </div>
       <div class="stats-text">
-        <p>${elevationInfo.name} was born on <span class="special-info"><time datetime="${elevationInfo.birthDate}">${birthDateFormatted}</time></span> in <span class="special-info">${elevationInfo.birthLocation}</span>, which has an elevation of <span class="special-info">${elevationInfo.birthElevation} meters (${birthElevationFeet} feet).</span></p>
-        <p>${elevationInfo.name} died on <span class="special-info"><time datetime="${elevationInfo.deathDate}">${deathDateFormatted}</time></span> in <span class="special-info">${elevationInfo.deathLocation}</span>, which has an elevation of <span class="special-info">${elevationInfo.deathElevation} meters (${deathElevationFeet} feet).</span></p>
-        <p>That means ${elevationInfo.name} had a net elevation change of <span class="special-info">${elevationInfo.elevationChange} meters (${(elevationInfo.elevationChange * 3.28084).toFixed(2)} ft)</span>, with a distance of <span class="special-info">${distanceKm} km</span>, resulting in a slope of <span class="special-info">${(elevationInfo.elevationChange / (elevationInfo.distance + .0001) * 100).toFixed(2)}%.</span></p>
+        <p>${elevationInfo.title} was born on <span class="special-info"><time datetime="${elevationInfo.birthDate}">${birthDateFormatted}</time></span> in <span class="special-info">${elevationInfo.birthLocation}</span>, which has an elevation of <span class="special-info">${elevationInfo.birthElevation} meters (${birthElevationFeet} feet).</span></p>
+        <p>${elevationInfo.title} died on <span class="special-info"><time datetime="${elevationInfo.deathDate}">${deathDateFormatted}</time></span> in <span class="special-info">${elevationInfo.deathLocation}</span>, which has an elevation of <span class="special-info">${elevationInfo.deathElevation} meters (${deathElevationFeet} feet).</span></p>
+        <p>That means ${elevationInfo.title} had a net elevation change of <span class="special-info">${elevationInfo.elevationChange} meters (${(elevationInfo.elevationChange * 3.28084).toFixed(2)} ft)</span>, with a distance of <span class="special-info">${distanceKm} km (${(distanceKm * 0.6213712).toFixed(2)} mi)</span>, resulting in a slope of <span class="special-info">${(elevationInfo.elevationChange / (elevationInfo.distance + .0001) * 100).toFixed(2)}%.</span></p>
       </div>
     </div>
   `;
