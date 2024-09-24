@@ -8,7 +8,7 @@ $(function () {
   const INFO_API_URL = "https://net-elevation.avibagla.workers.dev/get-info"
   const nameInput = $("#name-input");
   const submitButton = $("#submit-button");
-  const suggestions = $(".suggestion");
+  var suggestions = $(".suggestion");
 
 
   function formatDateWithSuffix(dateString) {
@@ -95,6 +95,7 @@ $(function () {
     console.log(err);
 
     var myNote = "";
+    var myTitle = ""
 
     console.log(err);
 
@@ -103,39 +104,69 @@ $(function () {
       $(this).remove();
     });
     if (err.details === "There is no birthday associated with this wiki search") {
-      myNote = "Hey buddy, when we check wikipedia, this search has no birthday... did you look up an inanimate object? This starts to trigger some philsophical questions, that I, as a website, cannot help you with. Well, some websites can - just not this one."
+      myTitle = "Inanimate Object?";
+      myNote = "Hey buddy, when we check Wikipedia, this search has no birthday... did you look up an inanimate object? This starts to trigger some philsophical questions, that I, as a website, cannot help you with. Well, some websites can - just not this one."
     } else if (err.details === "There is no deathday associated with this wiki search") {
-      myNote = "So it appears that this person is still alive. Can't really help you here, can't calculate their net elevation if it's still changing. I guess... I'm sorry they're not dead?"
-    } else if (err.details === "Cannot read properties of undefined (reading '0')"){
+      myTitle = "Still Alive?";
+      myNote = "So it appears that this person is still alive. Can't really help you here, unable to calculate their net elevation if it's still changing. I guess... I'm sorry they're not dead?"
+    } else if (err.details === "Cannot read properties of undefined (reading '0')") {
+      myTitle = "Button Masher?";
       myNote = "Okay.... so you either 1) keyboard smashed, 2) mispelled the name you're looking for or 3) put a bunch of numbers in this for no reason. If it's a common mispelling, I'll get around to trying to fix it! Try searching again!";
 
-    } else if(err.details.includes("openstreetmap")){
+    } else if (err.details.includes("openstreetmap")) {
+      myTitle = "Open Street Map";
       myNote = "So, the place that this person died or was born in seems to not exist on Open Street Map. I'll see what I can do.";
 
     } else {
+      myTitle = "Probably Avi's Fault";
       myNote = "Okay, so I definitely messed up something on the backend. I'm sorry. I've reported this mistake to Santa Claus, my one true savior, and they (yes Santa uses they/them pronouns) will find the appropriate way to punish me until I fix said error."
     }
 
 
     var errorHTML = `
           <div class="error-message">
-            <h3>AN ERROR HAS OCCURED</h3>
-            <h6>let's see what happened....</h6>
+            <h3>ERROR: ${myTitle}</h3>
+            <h6>god, errors suck</h6>
             <p class="error-text">${myNote}</p>
+
+            <div class="submission-suggestions ">
+              <h5 class="suggestion-title">Want to try one that does work?</h5>
+              <div class="suggestion-row">
+                <button class="suggestion" aria-label="submission suggestions">Abraham Lincoln</button>
+                <button class="suggestion" aria-label="submission suggestions">Amy Winehouse</button>
+                <button class="suggestion" aria-label="submission suggestions">Albert Einstein</button>
+
+              </div>
+              <div class="suggestion-row">
+                <button class="suggestion" aria-label="submission suggestions">Marilyn Monroe</button>
+                <button class="suggestion" aria-label="submission suggestions">James Earl Jones</button>
+                <button class="suggestion" aria-label="submission suggestions">George Carlin</button>
+              </div>
+            </div>
           
           </div>
       `
 
 
-    console.error(errorHTML);
-    $("#results").html(errorHTML)
+
+    $("#results").html(errorHTML);
+
+
+    suggestions = $(".suggestion");
+
+
+    suggestions.click(function (e) {
+      // console.log(e);
+      console.log($(this).text())
+      nameSubmission(e, $(this).text());
+    });
 
   }
 
 
   /*Map Information */
   var map;
-  
+
   const birthIcon = L.icon({
     iconUrl: './images/birthicon.png', // URL to your custom icon for birth
     iconSize: [32, 32], // Size of the icon
@@ -176,7 +207,7 @@ $(function () {
 
     var lineForDistance = L.polyline(latlngs, { color: "#000000", weight: 5, opacity: 0.8 }).addTo(map);
 
-    var birthMarker = L.marker([birthCoords.lat, birthCoords.lon], {icon:birthIcon})
+    var birthMarker = L.marker([birthCoords.lat, birthCoords.lon], { icon: birthIcon })
       .bindPopup(`
         
         <div class="popup-content popup-birth">
@@ -187,7 +218,7 @@ $(function () {
         
         `)
       .addTo(map);
-    var deathMarker = L.marker([deathCoords.lat, deathCoords.lon], {icon:deathIcon})
+    var deathMarker = L.marker([deathCoords.lat, deathCoords.lon], { icon: deathIcon })
       .bindPopup(`
         <div class="popup-content popup-death">
           <h4 class="popup-title">Deathplace</h4>
@@ -227,12 +258,13 @@ $(function () {
     try {
       elevationInfo = await getPersonData(name);
       console.log(elevationInfo);
-      if(elevationInfo.error){
+      if (elevationInfo.error) {
         throw elevationInfo;
       };
       // console.log(elevationInfo);
       var resultsHTML = elevationHTML(elevationInfo);
       console.log(resultsHTML);
+
       $("#results").html(resultsHTML)
 
       nameInput.prop("disabled", false);
