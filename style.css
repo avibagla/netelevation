@@ -50,7 +50,7 @@ h5 {
   font-style: italic;
   opacity: 80%;
   font-size: 1em;
-  color: var(--true-blue)
+  color: var(--ghost-white)
 }
 
 /* button {
@@ -72,7 +72,7 @@ h5 {
 .submission-suggestions {
   max-width: 500px;
   margin: auto;
-  background-color: var(--ghost-white);
+  background-color: var(--true-blue);
   padding: 16px;
   margin-top: 16px;
   border-radius: 4px;
