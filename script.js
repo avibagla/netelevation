@@ -1,5 +1,180 @@
 
 
+var comps = [
+  {
+    "name": "Apple",
+    "elevation": 0.1,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Paperclip",
+    "elevation": 0.2,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Soccer Ball",
+    "elevation": 0.22,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Toaster",
+    "elevation": 0.3,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Chair (seat height)",
+    "elevation": 0.45,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Bicycle Wheel",
+    "elevation": 0.7,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Kitchen Countertop",
+    "elevation": 0.9,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Average Human (height)",
+    "elevation": 1.75,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Refrigerator",
+    "elevation": 1.8,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Basketball Hoop",
+    "elevation": 3.05,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Single-story House",
+    "elevation": 3.5,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Double-Decker Bus",
+    "elevation": 4.4,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Streetlight",
+    "elevation": 6,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Giraffe (average height)",
+    "elevation": 5.5,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Telephone Pole",
+    "elevation": 10,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Leaning Tower of Pisa",
+    "elevation": 57,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Statue of Liberty",
+    "elevation": 93,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Big Ben",
+    "elevation": 96,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Great Pyramid of Giza",
+    "elevation": 139,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Golden Gate Bridge (tower height)",
+    "elevation": 227,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Eiffel Tower",
+    "elevation": 300,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Burj Khalifa",
+    "elevation": 828,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Angel Falls (Venezuela)",
+    "elevation": 979,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Table Mountain (South Africa)",
+    "elevation": 1085,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Half Dome (Yosemite)",
+    "elevation": 1444,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Mount Washington",
+    "elevation": 1917,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Ben Nevis (Scotland)",
+    "elevation": 1345,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Mauna Kea (Hawaii)",
+    "elevation": 4207,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Shahdagh Mountain (Azerbaijan)",
+    "elevation": 4243,
+    "image": "tbd.png"
+  },
+  {
+    "name": "Mount Everest",
+    "elevation": 8848,
+    "image": "tbd.png"
+  }
+]
+
+
+function findClosestComparisonItems(netElevation) {
+  // Sort comparison points by elevation in ascending order
+  comps.sort((a, b) => a.elevation - b.elevation);
+
+  let lowerItem = null;
+  let higherItem = null;
+
+  // Iterate through the sorted comparison points
+  for (let i = 0; i < comps.length; i++) {
+    if (comps[i].elevation <= netElevation) {
+      lowerItem = comps[i]; // Update lower item
+    } else if (comps[i].elevation > netElevation) {
+      higherItem = comps[i]; // Set the first higher item and break
+      break;
+    }
+  }
+
+  return { lowerItem, higherItem };
+}
+
+
 
 $(function () {
   //gotta wait till the DOM is ready, woooooooooooooooo
@@ -42,8 +217,9 @@ $(function () {
 
     return elevationInfo;
 
-
   }
+
+  
 
 
   /**Let's create a bunch of little functions to handle each html section */
