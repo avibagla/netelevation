@@ -34,59 +34,49 @@ var compsTest = [
 
 var comps = [
   {
+    "name": "Nothingness",
+    "elevation": 0.0,
+    "image": "https://images.pexels.com/photos/17175670/pexels-photo-17175670/free-photo-of-flat-lay-with-blank-writing-sheet-pen-and-crumpled-paper-balls-on-top-of-wooden-office-desk-writer-s-block-or-creativity-crisis-concept-top-down-view.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
     "name": "Apple",
     "elevation": 0.1,
-    "image":""
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1920px-Pink_lady_and_cross_section.jpg"
   },
   {
     "name": "Average Human (height)",
     "elevation": 1.75,
-    "image":""
-  },
-  {
-    "name": "Refrigerator",
-    "elevation": 1.8,
-    "image":""
+    "image": "https://images.pexels.com/photos/103123/pexels-photo-103123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     "name": "Basketball Hoop",
     "elevation": 3.05,
-    "image":""
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Basketball_net.jpg/1920px-Basketball_net.jpg"
   },
   {
     "name": "Double-Decker Bus",
     "elevation": 4.4,
-    "image":""
-  },
-  {
-    "name": "Giraffe (average height)",
-    "elevation": 5.5,
-    "image":""
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/LTZ1747-9-20240417-173412.jpg/1920px-LTZ1747-9-20240417-173412.jpg"
   },
   {
     "name": "Telephone Pole",
     "elevation": 10,
-    "image":""
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/SIF-Overhead-Wires-1-Cropped.jpg"
   },
   {
     "name": "Leaning Tower of Pisa",
     "elevation": 57,
-    "image":""
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Italy_-_Pisa_-_Leaning_Tower.jpg/440px-Italy_-_Pisa_-_Leaning_Tower.jpg"
   },
   {
     "name": "Statue of Liberty",
     "elevation": 93,
-    "image":""
-  },
-  {
-    "name": "Big Ben",
-    "elevation": 96,
-    "image":""
+    "image":"https://images.pexels.com/photos/356844/pexels-photo-356844.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     "name": "Great Pyramid of Giza",
     "elevation": 139,
-    "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/600px-Kheops-Pyramid.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/600px-Kheops-Pyramid.jpg"
   },
   {
     "name": "Golden Gate Bridge",
@@ -96,52 +86,42 @@ var comps = [
   {
     "name": "Eiffel Tower",
     "elevation": 300,
-    "image":""
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/500px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg"
   },
   {
     "name": "Burj Khalifa",
     "elevation": 828,
-    "image":""
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Burj_Khalifa.jpg/1097px-Burj_Khalifa.jpg"
   },
   {
     "name": "Angel Falls (Venezuela)",
     "elevation": 979,
-    "image":""
-  },
-  {
-    "name": "Table Mountain",
-    "elevation": 1085,
-    "image":""
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e9/SaltoAngel1.jpg"
   },
   {
     "name": "Half Dome (Yosemite)",
     "elevation": 1444,
-    "image":""
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg/544px-Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg"
   },
   {
     "name": "Mount Washington",
     "elevation": 1917,
-    "image":""
-  },
-  {
-    "name": "Ben Nevis (Scotland)",
-    "elevation": 1345,
-    "image":""
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/White_Mountains_12_30_09_81.jpg/544px-White_Mountains_12_30_09_81.jpg"
   },
   {
     "name": "Mauna Kea (Hawaii)",
     "elevation": 4207,
-    "image":""
+    "image": "https://c.pxhere.com/photos/1c/92/hawaii_big_iland_mauna_kea_sunset-1116816.jpg!s"
   },
   {
     "name": "Shahdagh Mountain",
     "elevation": 4243,
-    "image":""
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/%C5%9Eahda%C4%9F_Mountain%2C_Qusar%2C_2013.JPG/1920px-%C5%9Eahda%C4%9F_Mountain%2C_Qusar%2C_2013.JPG"
   },
   {
     "name": "Mount Everest",
     "elevation": 8848,
-    "image":""
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Mount_Everest_as_seen_from_Drukair2_PLW_edit_Cropped.jpg/576px-Mount_Everest_as_seen_from_Drukair2_PLW_edit_Cropped.jpg"
   }
 ]
 
@@ -154,12 +134,12 @@ function findClosestComparisonItems(netElevation) {
   comps.sort((a, b) => a.elevation - b.elevation);
 
   let lowerItem = comps[0];
-  let higherItem = comps[comps.length -1];
+  let higherItem = comps[comps.length - 1];
 
 
   // Iterate through the sorted comparison points
 
-  console.log(comps)
+  
   for (let i = 0; i < comps.length; i++) {
     if (comps[i].elevation <= netElevation) {
       lowerItem = comps[i]; // Update lower item
@@ -169,7 +149,7 @@ function findClosestComparisonItems(netElevation) {
     }
   }
 
-  console.log(higherItem)
+  
 
   return { lowerItem, higherItem };
 }
@@ -223,13 +203,13 @@ $(function () {
 
     const data = [
       lowerItem,
-      { name: elevationInfo.name, elevation: Math.abs(elevationInfo.elevationChange), image: elevationInfo.wikiImage },
+      { name: elevationInfo.name, elevation: Math.abs(elevationInfo.elevationChange) },
       higherItem
     ];
 
     const barColors = ['var(--bright-pink)', 'var(--ghost-white)', 'var(--true-blue)']
 
-    console.log(data);
+    
 
     const width = 400;
     const height = 400;
@@ -296,12 +276,25 @@ $(function () {
       .attr("fill", "var(--ghost-white)");
   };
 
+    
 
 
 
   /**Let's create a bunch of little functions to handle each html section */
 
+
+
   function elevationHTML(elevationInfo) {
+
+
+    function timeDiffCalc(date1, date2) {
+      let d1 = new Date(date1);
+      let d2 = new Date(date2);
+      let differenceInMs = d2 - d1;
+
+      return differenceInMs
+
+    }
 
     const birthDateFormatted = formatDateWithSuffix(elevationInfo.birthDate);
     const deathDateFormatted = formatDateWithSuffix(elevationInfo.deathDate);
@@ -309,9 +302,11 @@ $(function () {
     const deathElevationFeet = (elevationInfo.deathElevation * 3.28084).toFixed(2);
     const distanceKm = (elevationInfo.distance / 1000).toFixed(2); // Convert meters to kilometers
     const { lowerItem, higherItem } = findClosestComparisonItems(elevationInfo.elevationChange);
-    const timeDiff = elevationInfo.deathDate - elevationInfo.birthDate;
+    const timeDiff = timeDiffCalc(elevationInfo.birthDate, elevationInfo.deathDate);
 
-    
+    const rateChange = (Math.abs(elevationInfo.elevationChange) / (timeDiff / (1000 * 60 * 60 * 24 * 365))).toFixed(2);
+
+
 
 
     const mainHTML = `
@@ -322,20 +317,12 @@ $(function () {
                   (${(elevationInfo.elevationChange * 3.28084).toFixed(2)} ft)
               </h3>
           </div>
-          <div class="map-container">
-              <div id="key-map"></div>
-              <div class="emoji-credit">
-                  <a target="_blank" href="https://icons8.com/icon/y5aqtLBZHmCy/headstone">Headstone</a> and <a target="_blank"
-                      href="https://icons8.com/icon/101036/baby-bottle">Baby Bottle</a> icon by <a target="_blank"
-                      href="https://icons8.com">Icons8</a>
 
+           <div class="comparison-section">
+            <div class="result-name">
+                  <h2>Landmark Comparisons</h2>
               </div>
 
-
-
-          </div>
-
-          <div class="comparison-section">
               <div id="comp-graph"></div>
 
               <div class="comparison-images-section">
@@ -355,6 +342,19 @@ $(function () {
 
               </div>
           </div>
+          <div class="map-container">
+              <div id="key-map"></div>
+              <div class="emoji-credit">
+                  <a target="_blank" href="https://icons8.com/icon/1643/headstone">Headstone</a> and <a target="_blank"
+                      href="https://icons8.com/icon/2094/crying-baby">Baby Crying</a> icon by <a target="_blank"
+                      href="https://icons8.com">Icons8</a>
+
+              </div>
+
+
+          </div>
+
+         
 
 
 
@@ -376,18 +376,19 @@ $(function () {
                           class="special-info">${elevationInfo.deathElevation} meters (${deathElevationFeet} feet).</span></p>
                   <p>That means ${elevationInfo.title} had a net elevation change of <span
                           class="special-info">${elevationInfo.elevationChange} meters (${(elevationInfo.elevationChange *
-                  3.28084).toFixed(2)} ft)</span>, with a distance of <span class="special-info">${distanceKm} km
+        3.28084).toFixed(2)} ft)</span>, with a distance of <span class="special-info">${distanceKm} km
                           (${(distanceKm * 0.6213712).toFixed(2)} mi)</span>, resulting in a slope of <span
                           class="special-info">${(elevationInfo.elevationChange / (elevationInfo.distance + .0001) *
-                  100).toFixed(2)}%.</span></p>
+        100).toFixed(2)}%.</span></p>
+                <p>As a result, ${elevationInfo.title} <span class="special-info">${elevationInfo.elevationChange < 0 ? " descended" : "ascended"}</span> at a rate of <span class="special-info">${rateChange}m per year</span></p>
 
               </div>
           </div>
   `;
 
     setTimeout(() => {
-       d3graphAdd(elevationInfo, lowerItem, higherItem);
-      
+      d3graphAdd(elevationInfo, lowerItem, higherItem);
+
     }, 100);
     return mainHTML;
 
@@ -395,17 +396,62 @@ $(function () {
 
   }
 
+  
 
+
+  // d3graphAdd(elevationInfo, lowerItem, higherItem);
+
+
+  // var testImages = function () {
+  //   var testPerson = {
+  //     name: "Abraham Lincoln",
+  //     title: "Abraham Lincoln",
+  //     birthDate: "1809-02-12",
+  //     deathDate: "1865-04-15",
+  //     birthLocation: "Abraham Lincoln Birthplace National Historical Park",
+  //     birthElevation: 228,
+  //     deathLocation: "Washington, DC, US",
+  //     deathElevation: 4,
+  //     wikiURL: "https://en.wikipedia.org/wiki/Abraham_Lincoln",
+  //     wikiImage: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Abraham_Lincoln_O-77_matte_collodion_print.jpg",
+  //     elevationChange: -224,
+  //     distance: 274561.9974954496
+  //   }
+
+  //   var start = 17;
+
+  //   d3graphAdd(testPerson, comps[start], comps[start + 1]);
+
+  //   var imageHTML = `
+  //   <div class="comparison-images-section">
+
+  //                 <div class="image-row">
+  //                     <div class="comparison-image"
+  //                         style="background-image: url('${comps[start].image}');">
+  //                     </div>
+  //                     <div class="comparison-image"
+  //                         style="background-image: url('${testPerson.wikiImage}');">
+  //                     </div>
+  //                     <div class="comparison-image"
+  //                         style="background-image: url('${comps[start+1].image}');">
+  //                     </div>
+  //                 </div>
+  //                 `
+  //   $(".comparison-images-section").html("");
+
+  //   $(".comparison-images-section").html(imageHTML);
+
+  // }
 
   function handleError(err) {
     //TODO Handle errors like person still alive, place doesn't exist, etc, server error
 
-    console.log(err);
+    
 
     var myNote = "";
     var myTitle = ""
 
-    console.log(err);
+    
 
     $(".submission-suggestions").addClass("slide-up");
     $(".submission-suggestions").on('transitionend', function () {
@@ -464,8 +510,8 @@ $(function () {
 
 
     suggestions.click(function (e) {
-      // console.log(e);
-      console.log($(this).text())
+      // 
+      
       nameSubmission(e, $(this).text());
     });
 
@@ -504,15 +550,15 @@ $(function () {
     if (typeof (birthCoords) == "string") { birthCoords = JSON.parse(birthCoords); }
 
 
-    console.log(birthCoords, deathCoords);
+    
 
     var latlngs = [
       [birthCoords.lat, birthCoords.lon],
       [deathCoords.lat, deathCoords.lon],
     ];
-    console.log(latlngs)
 
-    var lineForDistance = L.polyline(latlngs, { color: "#000000", weight: 5, opacity: 0.8 }).addTo(map);
+
+    var lineForDistance = L.polyline(latlngs, { color: "var(--true-blue)", weight: 5, opacity: 0.8 }).addTo(map);
 
     var birthMarker = L.marker([birthCoords.lat, birthCoords.lon], { icon: birthIcon })
       .bindPopup(`
@@ -564,14 +610,12 @@ $(function () {
 
     try {
       elevationInfo = await getPersonData(name);
-      console.log(elevationInfo);
+      
       if (elevationInfo.error) {
         throw elevationInfo;
       };
-      // console.log(elevationInfo);
+      // 
       var resultsHTML = elevationHTML(elevationInfo);
-      console.log(resultsHTML);
-
       $("#results").html(resultsHTML)
 
       nameInput.prop("disabled", false);
@@ -599,11 +643,11 @@ $(function () {
 
     }
 
-    // console.log(elevationInfo);
+    // 
     // try {
 
     // } catch (error) {
-    //   console.log(error);
+    //   
     // }
 
   }
@@ -622,12 +666,12 @@ $(function () {
 
 
 
-  // console.log(suggestions)
+  // 
 
 
   suggestions.click(function (e) {
-    // console.log(e);
-    console.log($(this).text())
+    // 
+    
     nameSubmission(e, $(this).text());
   });
 
