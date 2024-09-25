@@ -1,167 +1,165 @@
 
 
-var comps = [
-  {
-    "name": "Apple",
-    "elevation": 0.1,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Paperclip",
-    "elevation": 0.2,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Soccer Ball",
-    "elevation": 0.22,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Toaster",
-    "elevation": 0.3,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Chair (seat height)",
-    "elevation": 0.45,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Bicycle Wheel",
-    "elevation": 0.7,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Kitchen Countertop",
-    "elevation": 0.9,
-    "image": "tbd.png"
-  },
+var compsTest = [
   {
     "name": "Average Human (height)",
     "elevation": 1.75,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Refrigerator",
-    "elevation": 1.8,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Basketball Hoop",
-    "elevation": 3.05,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Single-story House",
-    "elevation": 3.5,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Double-Decker Bus",
-    "elevation": 4.4,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Streetlight",
-    "elevation": 6,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Giraffe (average height)",
-    "elevation": 5.5,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Telephone Pole",
-    "elevation": 10,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Leaning Tower of Pisa",
-    "elevation": 57,
-    "image": "tbd.png"
   },
   {
     "name": "Statue of Liberty",
     "elevation": 93,
-    "image": "tbd.png"
   },
   {
-    "name": "Big Ben",
-    "elevation": 96,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Great Pyramid of Giza",
-    "elevation": 139,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Golden Gate Bridge (tower height)",
+    "name": "Golden Gate Bridge",
     "elevation": 227,
-    "image": "tbd.png"
   },
   {
     "name": "Eiffel Tower",
     "elevation": 300,
-    "image": "tbd.png"
   },
   {
     "name": "Burj Khalifa",
     "elevation": 828,
-    "image": "tbd.png"
   },
   {
-    "name": "Angel Falls (Venezuela)",
-    "elevation": 979,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Table Mountain (South Africa)",
-    "elevation": 1085,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Half Dome (Yosemite)",
-    "elevation": 1444,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Mount Washington",
-    "elevation": 1917,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Ben Nevis (Scotland)",
-    "elevation": 1345,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Mauna Kea (Hawaii)",
+    "name": "Mauna Kea",
     "elevation": 4207,
-    "image": "tbd.png"
-  },
-  {
-    "name": "Shahdagh Mountain (Azerbaijan)",
-    "elevation": 4243,
-    "image": "tbd.png"
   },
   {
     "name": "Mount Everest",
     "elevation": 8848,
-    "image": "tbd.png"
+  }
+]
+
+
+var comps = [
+  {
+    "name": "Apple",
+    "elevation": 0.1,
+    "image":""
+  },
+  {
+    "name": "Average Human (height)",
+    "elevation": 1.75,
+    "image":""
+  },
+  {
+    "name": "Refrigerator",
+    "elevation": 1.8,
+    "image":""
+  },
+  {
+    "name": "Basketball Hoop",
+    "elevation": 3.05,
+    "image":""
+  },
+  {
+    "name": "Double-Decker Bus",
+    "elevation": 4.4,
+    "image":""
+  },
+  {
+    "name": "Giraffe (average height)",
+    "elevation": 5.5,
+    "image":""
+  },
+  {
+    "name": "Telephone Pole",
+    "elevation": 10,
+    "image":""
+  },
+  {
+    "name": "Leaning Tower of Pisa",
+    "elevation": 57,
+    "image":""
+  },
+  {
+    "name": "Statue of Liberty",
+    "elevation": 93,
+    "image":""
+  },
+  {
+    "name": "Big Ben",
+    "elevation": 96,
+    "image":""
+  },
+  {
+    "name": "Great Pyramid of Giza",
+    "elevation": 139,
+    "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/600px-Kheops-Pyramid.jpg"
+  },
+  {
+    "name": "Golden Gate Bridge",
+    "elevation": 227,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Golden_Gate_Bridge_as_seen_from_Battery_East.jpg/1920px-Golden_Gate_Bridge_as_seen_from_Battery_East.jpg"
+  },
+  {
+    "name": "Eiffel Tower",
+    "elevation": 300,
+    "image":""
+  },
+  {
+    "name": "Burj Khalifa",
+    "elevation": 828,
+    "image":""
+  },
+  {
+    "name": "Angel Falls (Venezuela)",
+    "elevation": 979,
+    "image":""
+  },
+  {
+    "name": "Table Mountain",
+    "elevation": 1085,
+    "image":""
+  },
+  {
+    "name": "Half Dome (Yosemite)",
+    "elevation": 1444,
+    "image":""
+  },
+  {
+    "name": "Mount Washington",
+    "elevation": 1917,
+    "image":""
+  },
+  {
+    "name": "Ben Nevis (Scotland)",
+    "elevation": 1345,
+    "image":""
+  },
+  {
+    "name": "Mauna Kea (Hawaii)",
+    "elevation": 4207,
+    "image":""
+  },
+  {
+    "name": "Shahdagh Mountain",
+    "elevation": 4243,
+    "image":""
+  },
+  {
+    "name": "Mount Everest",
+    "elevation": 8848,
+    "image":""
   }
 ]
 
 
 function findClosestComparisonItems(netElevation) {
   // Sort comparison points by elevation in ascending order
+
+  netElevation = Math.abs(netElevation);
+
   comps.sort((a, b) => a.elevation - b.elevation);
 
-  let lowerItem = null;
-  let higherItem = null;
+  let lowerItem = comps[0];
+  let higherItem = comps[comps.length -1];
+
 
   // Iterate through the sorted comparison points
+
+  console.log(comps)
   for (let i = 0; i < comps.length; i++) {
     if (comps[i].elevation <= netElevation) {
       lowerItem = comps[i]; // Update lower item
@@ -171,8 +169,11 @@ function findClosestComparisonItems(netElevation) {
     }
   }
 
+  console.log(higherItem)
+
   return { lowerItem, higherItem };
 }
+
 
 
 
@@ -213,13 +214,89 @@ $(function () {
 
     var response = await fetch(encodeURI(INFO_API_URL + "?name=" + name));
     const elevationInfo = await response.json();
-    // console.log(elevationInfo);
-
     return elevationInfo;
 
   }
 
-  
+
+  var d3graphAdd = function (elevationInfo, lowerItem, higherItem) {
+
+    const data = [
+      lowerItem,
+      { name: elevationInfo.name, elevation: Math.abs(elevationInfo.elevationChange), image: elevationInfo.wikiImage },
+      higherItem
+    ];
+
+    const barColors = ['var(--bright-pink)', 'var(--ghost-white)', 'var(--true-blue)']
+
+    console.log(data);
+
+    const width = 400;
+    const height = 400;
+    const svg = d3.select("#comp-graph")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
+
+    const margin = { top: 30, right: 30, bottom: 40, left: 40 };
+    const contentWidth = width - margin.left - margin.right;
+    const contentHeight = height - margin.top - margin.bottom;
+
+    const x = d3.scaleBand()
+      .domain(data.map(d => d.name))
+      .range([0, contentWidth])
+      .padding(0.1);
+
+    const y = d3.scaleLinear()
+      .domain([0, d3.max(data, d => d.elevation)])
+      .range([contentHeight, 0]);
+
+    const chart = svg.append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    // Clear any existing x-axis to prevent duplication
+    chart.selectAll("g.x-axis").remove();
+
+    // Append the x-axis
+    chart.append("g")
+      .attr("class", "x-axis")
+      .attr("transform", `translate(0,${contentHeight})`)
+      .call(d3.axisBottom(x));
+
+    // Append the y-axis
+    chart.append("g")
+      .call(d3.axisLeft(y));
+
+
+    // Add bars with the background images
+    chart.selectAll(".bar")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("class", "bar")
+      .attr("x", d => x(d.name))
+      .attr("y", d => y(d.elevation))
+      .attr("width", x.bandwidth())
+      .attr("height", d => contentHeight - y(d.elevation))
+      .attr("fill", (d, i) => barColors[i % barColors.length]);  // Use the pattern as fill
+
+
+    // Add value labels (above the bars)
+    chart.selectAll(".value-label")
+      .data(data)
+      .enter()
+      .append("text")
+      .attr("class", "value-label")
+      .text(d => `${d.elevation}m`)
+      .attr("x", d => x(d.name) + x.bandwidth() / 2)
+      .attr("y", d => y(d.elevation) - 10)
+      .attr("text-anchor", "middle")
+      .attr("font-family", '"orbital"')
+      .attr("font-weight", "900")
+      .attr("fill", "var(--ghost-white)");
+  };
+
+
 
 
   /**Let's create a bunch of little functions to handle each html section */
@@ -231,38 +308,93 @@ $(function () {
     const birthElevationFeet = (elevationInfo.birthElevation * 3.28084).toFixed(2); // Conversion to feet
     const deathElevationFeet = (elevationInfo.deathElevation * 3.28084).toFixed(2);
     const distanceKm = (elevationInfo.distance / 1000).toFixed(2); // Convert meters to kilometers
+    const { lowerItem, higherItem } = findClosestComparisonItems(elevationInfo.elevationChange);
+    const timeDiff = elevationInfo.deathDate - elevationInfo.birthDate;
+
+    
 
 
     const mainHTML = `
       <div class="main-result">
-        <h3 class="elevation-main-result">
-          <span class="elevation-celeb-name">${elevationInfo.name}'s</span> net elevation was
-          <span class="net-elevation-number">${elevationInfo.elevationChange} meters</span> (${(elevationInfo.elevationChange * 3.28084).toFixed(2)} ft)
-        </h3>
-      </div>
-      <div class="map-container">
-      <div id="key-map"></div>
-      <div class="emoji-credit">
-        <a target="_blank" href="https://icons8.com/icon/y5aqtLBZHmCy/headstone">Headstone</a> and <a target="_blank" href="https://icons8.com/icon/101036/baby-bottle">Baby Bottle</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-      
-      </div>
-    </div>
-      <div class="details">
-      <div class="result-name">
-        <h2>${elevationInfo.title}</h2>
-      </div>
-      <div class="image-container">
-        <img src="${elevationInfo.wikiImage}" alt="Photo of ${elevationInfo.title}">
-      </div>
-      <div class="stats-text">
-        <p>${elevationInfo.title} was born on <span class="special-info"><time datetime="${elevationInfo.birthDate}">${birthDateFormatted}</time></span> in <span class="special-info">${elevationInfo.birthLocation}</span>, which has an elevation of <span class="special-info">${elevationInfo.birthElevation} meters (${birthElevationFeet} feet).</span></p>
-        <p>${elevationInfo.title} died on <span class="special-info"><time datetime="${elevationInfo.deathDate}">${deathDateFormatted}</time></span> in <span class="special-info">${elevationInfo.deathLocation}</span>, which has an elevation of <span class="special-info">${elevationInfo.deathElevation} meters (${deathElevationFeet} feet).</span></p>
-        <p>That means ${elevationInfo.title} had a net elevation change of <span class="special-info">${elevationInfo.elevationChange} meters (${(elevationInfo.elevationChange * 3.28084).toFixed(2)} ft)</span>, with a distance of <span class="special-info">${distanceKm} km (${(distanceKm * 0.6213712).toFixed(2)} mi)</span>, resulting in a slope of <span class="special-info">${(elevationInfo.elevationChange / (elevationInfo.distance + .0001) * 100).toFixed(2)}%.</span></p>
-      </div>
-    </div>
+              <h3 class="elevation-main-result">
+                  <span class="elevation-celeb-name">${elevationInfo.name}'s</span> net elevation was
+                  <span class="net-elevation-number">${elevationInfo.elevationChange} meters</span>
+                  (${(elevationInfo.elevationChange * 3.28084).toFixed(2)} ft)
+              </h3>
+          </div>
+          <div class="map-container">
+              <div id="key-map"></div>
+              <div class="emoji-credit">
+                  <a target="_blank" href="https://icons8.com/icon/y5aqtLBZHmCy/headstone">Headstone</a> and <a target="_blank"
+                      href="https://icons8.com/icon/101036/baby-bottle">Baby Bottle</a> icon by <a target="_blank"
+                      href="https://icons8.com">Icons8</a>
+
+              </div>
+
+
+
+          </div>
+
+          <div class="comparison-section">
+              <div id="comp-graph"></div>
+
+              <div class="comparison-images-section">
+
+                  <div class="image-row">
+                      <div class="comparison-image"
+                          style="background-image: url('${lowerItem.image}');">
+                      </div>
+                      <div class="comparison-image"
+                          style="background-image: url('${elevationInfo.wikiImage}');">
+                      </div>
+                      <div class="comparison-image"
+                          style="background-image: url('${higherItem.image}');">
+                      </div>
+                  </div>
+
+
+              </div>
+          </div>
+
+
+
+          <div class="details">
+              <div class="result-name">
+                  <h2>${elevationInfo.title}</h2>
+              </div>
+              <div class="image-container">
+                  <img src="${elevationInfo.wikiImage}" alt="Photo of ${elevationInfo.title}">
+              </div>
+              <div class="stats-text">
+                  <p>${elevationInfo.title} was born on <span class="special-info"><time
+                              datetime="${elevationInfo.birthDate}">${birthDateFormatted}</time></span> in <span
+                          class="special-info">${elevationInfo.birthLocation}</span>, which has an elevation of <span
+                          class="special-info">${elevationInfo.birthElevation} meters (${birthElevationFeet} feet).</span></p>
+                  <p>${elevationInfo.title} died on <span class="special-info"><time
+                              datetime="${elevationInfo.deathDate}">${deathDateFormatted}</time></span> in <span
+                          class="special-info">${elevationInfo.deathLocation}</span>, which has an elevation of <span
+                          class="special-info">${elevationInfo.deathElevation} meters (${deathElevationFeet} feet).</span></p>
+                  <p>That means ${elevationInfo.title} had a net elevation change of <span
+                          class="special-info">${elevationInfo.elevationChange} meters (${(elevationInfo.elevationChange *
+                  3.28084).toFixed(2)} ft)</span>, with a distance of <span class="special-info">${distanceKm} km
+                          (${(distanceKm * 0.6213712).toFixed(2)} mi)</span>, resulting in a slope of <span
+                          class="special-info">${(elevationInfo.elevationChange / (elevationInfo.distance + .0001) *
+                  100).toFixed(2)}%.</span></p>
+
+              </div>
+          </div>
   `;
+
+    setTimeout(() => {
+       d3graphAdd(elevationInfo, lowerItem, higherItem);
+      
+    }, 100);
     return mainHTML;
+
+
+
   }
+
 
 
   function handleError(err) {
@@ -371,7 +503,6 @@ $(function () {
     if (typeof (deathCoords) == "string") { deathCoords = JSON.parse(deathCoords); }
     if (typeof (birthCoords) == "string") { birthCoords = JSON.parse(birthCoords); }
 
-    console.log(info);
 
     console.log(birthCoords, deathCoords);
 
@@ -406,10 +537,10 @@ $(function () {
 
     map.fitBounds(lineForDistance.getBounds());
 
-
-
-
   };
+
+
+
 
   /**This is where ALL the work happens */
   async function nameSubmission(e, name) {
@@ -499,6 +630,8 @@ $(function () {
     console.log($(this).text())
     nameSubmission(e, $(this).text());
   });
+
+
 
 
 

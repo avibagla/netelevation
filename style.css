@@ -40,7 +40,7 @@ h1 {
   margin: 0px;
   padding: 0px;
   text-align: center;
-text-shadow: 4px 4px 0 var(--oxford-blue),
+  text-shadow: 4px 4px 0 var(--oxford-blue),
     /* Right and Bottom shadow */
     -0px -0px 0 #04052E;
   /* Left and Top shadow to create depth */
@@ -60,12 +60,12 @@ h5 {
 
 } */
 
-#top-subtitle{
+#top-subtitle {
   font-style: italic;
   opacity: .8;
   margin-top: 0;
   font-size: 1em;
-  margin-bottom:32px;
+  margin-bottom: 32px;
 }
 
 
@@ -307,6 +307,9 @@ Here are the specific stats on the side
 
 #key-map {
   height: 400px;
+  border-radius: 16px;
+  border-right: 8px solid var(--bright-pink);
+  border-bottom: 8px solid var(--bright-pink);
 }
 
 .map-pre-load {
@@ -328,19 +331,19 @@ ERRORS STUFF
 */
 
 
-.error-message{
+.error-message {
   max-width: 500px;
   margin: auto;
   background-color: var(--bright-pink);
   padding: 16px;
   border-radius: 4px;
-    transition: opacity 0.5s ease-in-out;
-      /* Transition effect */
+  transition: opacity 0.5s ease-in-out;
+  /* Transition effect */
 
 }
 
-.error-message h6{
-  margin-top:8px;
+.error-message h6 {
+  margin-top: 8px;
   font-style: italic;
 
 }
@@ -349,41 +352,42 @@ ERRORS STUFF
   margin: 0;
   font-size: 2em;
   text-shadow: 1px 1px 0 var(--oxford-blue),
-      /* Right and Bottom shadow */
-      -0px -0px 0 #04052E;
+    /* Right and Bottom shadow */
+    -0px -0px 0 #04052E;
 }
 
-p.error-text{
+p.error-text {
   text-align: center;
 }
 
 .emoji-credit {
   font-style: italic;
-  margin-top:4px;
+  margin-top: 4px;
   /* padding-left: 4px; */
   text-align: right;
 }
 
-a{
-  color:var(--bright-pink)
+a {
+  color: var(--bright-pink)
 }
 
 
-.popup-content{
+.popup-content {
 
   font-family: var(--body-font-family);
 }
 
-.popup-content h4{
-  font-size: 1.3em;;
+.popup-content h4 {
+  font-size: 1.3em;
+  ;
   margin: 0px;
 }
 
-.popup-content p{
+.popup-content p {
   margin: 0px;
 }
 
-.leaflet-popup-tip{
+.leaflet-popup-tip {
   border-radius: 10px;
 }
 
@@ -391,12 +395,13 @@ a{
 
   /* minor adjustments on titles*/
 
-  h1{
+  h1 {
     font-size: 2.5em;
   }
 
-  .elevation-main-result{
-    font-size: 1.5em;;
+  .elevation-main-result {
+    font-size: 1.5em;
+    ;
   }
 
 
@@ -410,23 +415,24 @@ a{
 
   .image-container {
     text-align: center;
-    margin:auto;
-        margin-bottom: 16px;
-    max-width: 200px;;
+    margin: auto;
+    margin-bottom: 16px;
+    max-width: 200px;
+    ;
     /* Space between image and text */
   }
 
-    .result-name {
-      grid-column: 1 ;
-      /* Span the name across all columns */
-      text-align: center;
-      font-size: 1.5em;
-      margin-bottom: 16px;
-    }
+  .result-name {
+    grid-column: 1;
+    /* Span the name across all columns */
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 16px;
+  }
 
-    .right-align-paragraph{
-      text-align: right;
-    }
+  .right-align-paragraph {
+    text-align: right;
+  }
 }
 
 /*Let's handle the font size*/
@@ -454,4 +460,115 @@ textarea {
 
 #name-input {
   font-size: 16px;
+}
+
+
+.comparison-section {
+  margin: auto;
+  font-family: var(--body-font-family);
+  display: flex;
+  justify-content: center;
+    flex-direction: column;
+      /* Stack children vertically */
+
+  margin-top: 16px;
+  align-items: center;
+
+  width: 100%;
+
+    padding: 16px 16px;
+      border: none;
+      border-radius: 8px;
+      border: 8px;
+  /* Enables horizontal scrolling */
+  white-space: nowrap;
+
+  background-color: var(--oxford-blue);
+  /* Prevents line breaks */
+}
+
+#comp-graph{
+  display: flex;
+    margin: auto;
+    text-align: center;
+}
+/* 
+#comp-graph svg {
+  margin: auto;
+  font-family: var(--body-font-family);
+} */
+
+
+text {
+  font-family: var(--body-font-family);
+}
+
+
+/* .bar {
+  fill: var(--ghost-white);
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e3/Kheops-Pyramid.jpg"); */
+
+/* } */
+
+.name-label,
+.value-label {
+  font-family: var(--body-font-family);
+  color: var(--ghost-white);
+}
+
+
+
+.comparison-section {
+  /* margin: auto; */
+  font-family: var(--body-font-family);
+  display: flex;
+
+  margin-top: 16px;
+  flex-direction: column;
+  /* Stack children vertically */
+  align-items: center;
+  /* Center items horizontally */
+  /* width: 100%;
+  padding: 16px; */
+  border-radius: 8px;
+  padding:0;
+  padding-top: 8px;
+  padding-bottom: 16px;;
+  background-color: var(--oxford-blue);
+}
+
+#comp-graph {
+  display: flex;
+  justify-content: center;
+  /* Center the graph horizontally */
+  margin: auto;
+  text-align: center;
+}
+
+.image-row {
+  display: flex;
+  /* Keep this as flex to arrange images in a row */
+  justify-content: center;
+  /* Center images in the row */
+  width: 350px;;
+  /* Make the row full width */
+  max-width: 450px;
+  /* Set max width to match the graph */
+  /* margin-top: 10px; */
+  /* Space above the images */
+}
+
+.comparison-image {
+  width: calc(33.33% - 10px);
+  /* Width for each image */
+  height: 150px;
+  /* Set a fixed height for uniformity */
+  background-size: cover;
+  /* Cover the entire div with the background image */
+  background-position: center;
+  /* Center the background image */
+  margin: 8px;
+  /* Horizontal spacing between images */
+  border-radius: 8px;
+  /* Optional: Add rounded corners */
 }
