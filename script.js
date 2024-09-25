@@ -211,7 +211,7 @@ $(function () {
 
     
 
-    const width = 400;
+    const width = 380;
     const height = 400;
     const svg = d3.select("#comp-graph")
       .append("svg")
@@ -320,7 +320,7 @@ $(function () {
 
            <div class="comparison-section">
             <div class="result-name">
-                  <h2>Landmark Comparisons</h2>
+                  <h4>Landmark Comparisons</42>
               </div>
 
               <div id="comp-graph"></div>
