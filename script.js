@@ -44,7 +44,7 @@ var comps = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1920px-Pink_lady_and_cross_section.jpg"
   },
   {
-    "name": "Average Human (height)",
+    "name": "Average Human",
     "elevation": 1.75,
     "image": "https://images.pexels.com/photos/103123/pexels-photo-103123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
@@ -74,7 +74,7 @@ var comps = [
     "image":"https://images.pexels.com/photos/356844/pexels-photo-356844.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
-    "name": "Great Pyramid of Giza",
+    "name": "Great Pyramid",
     "elevation": 139,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/600px-Kheops-Pyramid.jpg"
   },
@@ -99,7 +99,7 @@ var comps = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/e9/SaltoAngel1.jpg"
   },
   {
-    "name": "Half Dome (Yosemite)",
+    "name": "Half Dome",
     "elevation": 1444,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg/544px-Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg"
   },
@@ -109,7 +109,7 @@ var comps = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/White_Mountains_12_30_09_81.jpg/544px-White_Mountains_12_30_09_81.jpg"
   },
   {
-    "name": "Mauna Kea (Hawaii)",
+    "name": "Mauna Kea",
     "elevation": 4207,
     "image": "https://c.pxhere.com/photos/1c/92/hawaii_big_iland_mauna_kea_sunset-1116816.jpg!s"
   },
