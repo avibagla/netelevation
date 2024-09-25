@@ -1,5 +1,5 @@
 :root {
-  --dark-green: #053225ff;
+  --dark-green: rgb(24, 40, 33);
   --true-blue: #3066beff;
   --bright-pink: #f45b69;
   --ghost-white: #fffaffff;
@@ -31,16 +31,16 @@ h6 {
 }
 
 h1 {
-  font-family: "bigcity-grotesque-pro", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-  color: var(--true-blue);
+  font-family: "quokka-glitch-left", sans-serif;
+  font-weight: 700;
+  letter-spacing: 4pt;
+  color: var(--bright-pink);
   font-size: 4.5em;
   border-bottom: #04052E;
   margin: 0px;
   padding: 0px;
   text-align: center;
-  text-shadow: 4px 4px 0 var(--oxford-blue),
+  text-shadow: 2px 2px 0 #96383f,
     /* Right and Bottom shadow */
     -0px -0px 0 #04052E;
   /* Left and Top shadow to create depth */
