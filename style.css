@@ -35,14 +35,14 @@ h1 {
   font-weight: 700;
   letter-spacing: 4pt;
   color: var(--bright-pink);
-  font-size: 4.5em;
+  font-size: 5em;
   border-bottom: #04052E;
   margin: 0px;
   padding: 0px;
   text-align: center;
   text-shadow: 2px 2px 0 #96383f,
     /* Right and Bottom shadow */
-    -0px -0px 0 #04052E;
+    -0px -0px 0 #27272f;
   /* Left and Top shadow to create depth */
 }
 
@@ -571,4 +571,9 @@ text {
   /* Horizontal spacing between images */
   border-radius: 8px;
   /* Optional: Add rounded corners */
+}
+
+
+.error-title{
+  color:var(--oxford-blue);
 }

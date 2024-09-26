@@ -468,7 +468,7 @@ $(function () {
       myNote = "So it appears that this person is still alive. Can't really help you here, unable to calculate their net elevation if it's still changing. I guess... I'm sorry they're not dead?"
     } else if (err.details === "Cannot read properties of undefined (reading '0')") {
       myTitle = "Button Masher?";
-      myNote = "Okay.... so you either 1) keyboard smashed, 2) mispelled the name you're looking for or 3) put a bunch of numbers in this for no reason. If it's a common mispelling, I'll get around to trying to fix it! Try searching again!";
+      myNote = "Okay.... so you either 1) keyboard smashed, 2) misspelled the name you're looking for or 3) put a bunch of numbers in this for no reason or 4) searched someone not on Wikipedia. If it's a common misspelling, I'll get around to trying to fix it! Try searching again!";
 
     } else if (err.details.includes("openstreetmap")) {
       myTitle = "Open Street Map";
@@ -486,8 +486,8 @@ $(function () {
             <h6>god, errors suck</h6>
             <p class="error-text">${myNote}</p>
 
-            <div class="submission-suggestions ">
-              <h5 class="suggestion-title">Want to try one that does work?</h5>
+     
+              <h5 class="suggestion-title error-title">Try one that does work:</h5>
               <div class="suggestion-row">
                 <button class="suggestion" aria-label="submission suggestions">Abraham Lincoln</button>
                 <button class="suggestion" aria-label="submission suggestions">Amy Winehouse</button>
@@ -499,7 +499,6 @@ $(function () {
                 <button class="suggestion" aria-label="submission suggestions">James Earl Jones</button>
                 <button class="suggestion" aria-label="submission suggestions">George Carlin</button>
               </div>
-            </div>
           
           </div>
       `
