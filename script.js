@@ -306,6 +306,7 @@ $(function () {
 
     const rateChange = (Math.abs(elevationInfo.elevationChange) / (timeDiff / (1000 * 60 * 60 * 24 * 365))).toFixed(2);
 
+    const mainImage = elevationInfo.wikiImage ? elevationInfo.wikiImage : "./images/notfound.png"
 
 
 
@@ -332,7 +333,7 @@ $(function () {
                           style="background-image: url('${lowerItem.image}');">
                       </div>
                       <div class="comparison-image"
-                          style="background-image: url('${elevationInfo.wikiImage}');">
+                          style="background-image: url('${mainImage}');">
                       </div>
                       <div class="comparison-image"
                           style="background-image: url('${higherItem.image}');">
@@ -346,7 +347,7 @@ $(function () {
               <div id="key-map"></div>
               <div class="emoji-credit">
                   <a target="_blank" href="https://icons8.com/icon/1643/headstone">Headstone</a> and <a target="_blank"
-                      href="https://icons8.com/icon/2094/crying-baby">Baby Crying</a> icon by <a target="_blank"
+                      href="https://icons8.com/icon/7550/babys-room">Baby </a> icon by <a target="_blank"
                       href="https://icons8.com">Icons8</a>
 
               </div>
@@ -363,7 +364,7 @@ $(function () {
                   <h2>${elevationInfo.title}</h2>
               </div>
               <div class="image-container">
-                  <img src="${elevationInfo.wikiImage}" alt="Photo of ${elevationInfo.title}">
+                  <img src="${mainImage}" alt="Photo of ${elevationInfo.title}">
               </div>
               <div class="stats-text">
                   <p>${elevationInfo.title} was born on <span class="special-info"><time
