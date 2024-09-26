@@ -312,7 +312,7 @@ $(function () {
     const mainHTML = `
       <div class="main-result">
               <h3 class="elevation-main-result">
-                  <span class="elevation-celeb-name">${elevationInfo.name}'s</span> net elevation was
+                  <span class="elevation-celeb-name">${elevationInfo.title}'s</span> net elevation was
                   <span class="net-elevation-number">${elevationInfo.elevationChange} meters</span>
                   (${(elevationInfo.elevationChange * 3.28084).toFixed(2)} ft)
               </h3>
@@ -457,10 +457,13 @@ $(function () {
     $(".submission-suggestions").on('transitionend', function () {
       $(this).remove();
     });
-    if (err.details === "There is no birthday associated with this wiki search") {
+
+    console.log(err)
+
+    if (err.details === "No birthday associated with this wiki search") {
       myTitle = "Inanimate Object?";
       myNote = "Hey buddy, when we check Wikipedia, this search has no birthday... did you look up an inanimate object? This starts to trigger some philsophical questions, that I, as a website, cannot help you with. Well, some websites can - just not this one."
-    } else if (err.details === "There is no deathday associated with this wiki search") {
+    } else if (err.details === "No deathday associated with this wiki search") {
       myTitle = "Still Alive?";
       myNote = "So it appears that this person is still alive. Can't really help you here, unable to calculate their net elevation if it's still changing. I guess... I'm sorry they're not dead?"
     } else if (err.details === "Cannot read properties of undefined (reading '0')") {
