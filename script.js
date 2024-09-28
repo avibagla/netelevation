@@ -296,21 +296,28 @@ $(function () {
 
     }
 
-    const birthDateFormatted = formatDateWithSuffix(elevationInfo.birthDate);
-    const deathDateFormatted = formatDateWithSuffix(elevationInfo.deathDate);
+    const birthDateFormatted = elevationInfo.birthDate ? formatDateWithSuffix(elevationInfo.birthDate): "";
+    const deathDateFormatted = elevationInfo.deathDate ? formatDateWithSuffix(elevationInfo.deathDate): "";
     const birthElevationFeet = (elevationInfo.birthElevation * 3.28084).toFixed(2); // Conversion to feet
     const deathElevationFeet = (elevationInfo.deathElevation * 3.28084).toFixed(2);
     const distanceKm = (elevationInfo.distance / 1000).toFixed(2); // Convert meters to kilometers
     const { lowerItem, higherItem } = findClosestComparisonItems(elevationInfo.elevationChange);
-    const timeDiff = timeDiffCalc(elevationInfo.birthDate, elevationInfo.deathDate);
+    
+    
+    // const timeDiff = timeDiffCalc(elevationInfo.birthDate, elevationInfo.deathDate);
 
-    const rateChange = (Math.abs(elevationInfo.elevationChange) / (timeDiff / (1000 * 60 * 60 * 24 * 365))).toFixed(2);
+    // const rateChange = (Math.abs(elevationInfo.elevationChange) / (timeDiff / (1000 * 60 * 60 * 24 * 365))).toFixed(2);
 
     const mainImage = elevationInfo.wikiImage ? elevationInfo.wikiImage : "./images/notfound.png"
+    var mainHTML = ''
 
+    if (birthDateFormatted && deathDateFormatted) {
+      const timeDiff = timeDiffCalc(elevationInfo.birthDate, elevationInfo.deathDate);
 
-
-    const mainHTML = `
+      const rateChange = (Math.abs(elevationInfo.elevationChange) / (timeDiff / (1000 * 60 * 60 * 24 * 365))).toFixed(2);
+      
+      //that means we got dates!
+      mainHTML = `
       <div class="main-result">
               <h3 class="elevation-main-result">
                   <span class="elevation-celeb-name">${elevationInfo.title}'s</span> net elevation was
@@ -377,15 +384,93 @@ $(function () {
                           class="special-info">${elevationInfo.deathElevation} meters (${deathElevationFeet} feet).</span></p>
                   <p>That means ${elevationInfo.title} had a net elevation change of <span
                           class="special-info">${elevationInfo.elevationChange} meters (${(elevationInfo.elevationChange *
-        3.28084).toFixed(2)} ft)</span>, with a distance of <span class="special-info">${distanceKm} km
+          3.28084).toFixed(2)} ft)</span>, with a distance of <span class="special-info">${distanceKm} km
                           (${(distanceKm * 0.6213712).toFixed(2)} mi)</span>, resulting in a slope of <span
                           class="special-info">${(elevationInfo.elevationChange / (elevationInfo.distance + .0001) *
-        100).toFixed(2)}%.</span></p>
+          100).toFixed(2)}%.</span></p>
                 <p>As a result, ${elevationInfo.title} <span class="special-info">${elevationInfo.elevationChange < 0 ? " descended" : "ascended"}</span> at a rate of <span class="special-info">${rateChange}m per year</span></p>
 
               </div>
           </div>
   `;
+    } else {
+      //one of the two doesn't exist - so no birthdays, but we can still have the other info
+      mainHTML = `
+      <div class="main-result">
+              <h3 class="elevation-main-result">
+                  <span class="elevation-celeb-name">${elevationInfo.title}'s</span> net elevation was
+                  <span class="net-elevation-number">${elevationInfo.elevationChange} meters</span>
+                  (${(elevationInfo.elevationChange * 3.28084).toFixed(2)} ft)
+              </h3>
+          </div>
+
+           <div class="comparison-section">
+            <div class="result-name">
+                  <h4>Landmark Comparisons</42>
+              </div>
+
+              <div id="comp-graph"></div>
+
+              <div class="comparison-images-section">
+
+                  <div class="image-row">
+                      <div class="comparison-image"
+                          style="background-image: url('${lowerItem.image}');">
+                      </div>
+                      <div class="comparison-image"
+                          style="background-image: url('${mainImage}');">
+                      </div>
+                      <div class="comparison-image"
+                          style="background-image: url('${higherItem.image}');">
+                      </div>
+                  </div>
+
+
+              </div>
+          </div>
+          <div class="map-container">
+              <div id="key-map"></div>
+              <div class="emoji-credit">
+                  <a target="_blank" href="https://icons8.com/icon/1643/headstone">Headstone</a> and <a target="_blank"
+                      href="https://icons8.com/icon/7550/babys-room">Baby </a> icon by <a target="_blank"
+                      href="https://icons8.com">Icons8</a>
+
+              </div>
+
+
+          </div>
+
+         
+
+
+
+          <div class="details">
+              <div class="result-name">
+                  <h2>${elevationInfo.title}</h2>
+              </div>
+              <div class="image-container">
+                  <img src="${mainImage}" alt="Photo of ${elevationInfo.title}">
+              </div>
+              <div class="stats-text">
+                  <p>${elevationInfo.title} was born in <span
+                          class="special-info">${elevationInfo.birthLocation}</span>, which has an elevation of <span
+                          class="special-info">${elevationInfo.birthElevation} meters (${birthElevationFeet} feet).</span></p>
+                  <p>${elevationInfo.title} died in <span
+                          class="special-info">${elevationInfo.deathLocation}</span>, which has an elevation of <span
+                          class="special-info">${elevationInfo.deathElevation} meters (${deathElevationFeet} feet).</span></p>
+                  <p>That means ${elevationInfo.title} had a net elevation change of <span
+                          class="special-info">${elevationInfo.elevationChange} meters (${(elevationInfo.elevationChange *
+          3.28084).toFixed(2)} ft)</span>, with a distance of <span class="special-info">${distanceKm} km
+                          (${(distanceKm * 0.6213712).toFixed(2)} mi)</span>, resulting in a slope of <span
+                          class="special-info">${(elevationInfo.elevationChange / (elevationInfo.distance + .0001) *
+          100).toFixed(2)}%.</span></p>
+                
+              </div>
+          </div>
+  `
+
+    }
+     
 
     setTimeout(() => {
       d3graphAdd(elevationInfo, lowerItem, higherItem);
