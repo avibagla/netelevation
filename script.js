@@ -471,9 +471,9 @@ $(function () {
       myTitle = "Button Masher?";
       myNote = "Okay.... so you either 1) keyboard smashed, 2) misspelled the name you're looking for or 3) put a bunch of numbers in this for no reason or 4) searched someone not on Wikipedia. If it's a common misspelling, I'll get around to trying to fix it! Try searching again!";
 
-    } else if (err.details.includes("openstreetmap")) {
+    } else if (err.details.includes("openstreetmap") ||err.details.includes("Google Maps")) {
       myTitle = "Open Street Map";
-      myNote = "So, the place that this person died or was born in seems to not exist on Open Street Map. I'll see what I can do.";
+      myNote = "So, the place that this person died or was born in seems to not exist on either openstreetmap or Google Maps. I'll see what I can do.";
 
     } else {
       myTitle = "Probably Avi's Fault";
